@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Information Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="business-form.css">
+    <link rel="stylesheet" href="learn.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <a href="index.html">
+          <div class="logo"><img src="Logo.png" width="150px" alt="Solar Solutions Logo">
+        </a></div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="learn.html">Learn</a></li>
+            <li><a href="pricing.html">Plans & Pricing</a></li>
+            <li><a href="parteners.html">Products & Partnerships</a></li>
+          </ul>
+        </nav>
+        <div class="profile-icon"></div>
+      </header>
+
+    <section class="hero-section">
+        <h1>Business Solar Solutions</h1>
+        <p>Get a customized solar solution for your business needs</p>
+    </section>
+
+    <div class="form-container">
+        <div class="form-box" id="businessForm">
+            <h2><span>✓</span> Enter Your Business Information</h2>
+            <form onsubmit="submitForm(event)">
+                <div class="form-group">
+                    <label for="companyName">Company Name:</label>
+                    <input type="text" id="companyName" name="companyName" required>
+                </div>
+                <div class="form-group">
+                    <label for="electricityUsage">Electricity Usage (kWh/month):</label>
+                    <input type="number" id="electricityUsage" name="electricityUsage" required>
+                </div>
+                <div class="form-group">
+                    <label for="companyAddress">Company Address:</label>
+                    <input type="text" id="companyAddress" name="companyAddress" required>
+                </div>
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="tel" id="phoneNumber" name="phoneNumber" required>
+                </div>
+                <button type="submit" class="submit-btn">Submit Information</button>
+            </form>
+        </div>
+
+        <div id="message">
+            <h3>Thank You!</h3>
+            <p>We will contact you within 1 to 3 business days to discuss your solar solution.</p>
+            <p>Our team is excited to help you reduce your energy costs!</p>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-info">
+                <img src="Logo.png" width="120px" alt="Solar Solutions Logo">
+                <p>Pioneering solar energy solutions</p>
+            </div>
+
+            <div class="social-container">
+                <a href="https://www.facebook.com/profile.php?id=61573994254085" class="social-btn facebook">
+                    <i class="fab fa-facebook-f"></i>
+                    <span>Join Our Community</span>
+                </a>
+
+                <a href="https://www.instagram.com/u.s.s.r_corporation/" class="social-btn instagram">
+                    <i class="fab fa-instagram"></i>
+                    <span>@u.s.s.r_corporation</span>
+                </a>
+
+                <a href="" class="social-btn whatsapp">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>Chat With Experts</span>
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2025 USSR. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="business-form.js"></script>
+</body>
+
+</html>
