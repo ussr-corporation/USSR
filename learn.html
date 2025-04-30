@@ -41,12 +41,12 @@
 
         <div class="faq">
           <div class="faq-item">
-            <button class="faq-question">
+            <button class="faq-question" aria-expanded="false" aria-controls="answer1">
               <span class="faq-number">1</span>
               Fundamentals of Renewable Energy
               <i class="fas fa-chevron-down"></i>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer1" role="region">
               <div class="answer-content">
                 <p>Renewable energy represents the clean power revolution, drawing from Earth's natural cycles rather
                   than finite resources. Solar energy stands out as the most accessible form, converting sunlight
@@ -67,12 +67,12 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-question">
+            <button class="faq-question" aria-expanded="false" aria-controls="answer2">
               <span class="faq-number">2</span>
               Advantages of Solar Adoption
               <i class="fas fa-chevron-down"></i>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer2" role="region">
               <div class="answer-content">
                 <p>Transitioning to solar power delivers multifaceted benefits that extend beyond simple cost savings.
                   Financially, solar installations typically show a better return on investment than traditional stock
@@ -95,6 +95,11 @@
                     <h4>Energy Security</h4>
                     <p>Protection against grid outages with battery backup options</p>
                   </div>
+                  <div class="benefit-item">
+                    <i class="fas fa-globe-americas"></i>
+                    <h4>Environmental Impact</h4>
+                    <p>Clean energy production with zero operational emissions</p>
+                  </div>
                 </div>
               </div>
               <img src="solarpanel6.jpg" alt="Solar panels on modern home" class="faq-image">
@@ -102,12 +107,12 @@
           </div>
 
           <div class="faq-item">
-            <button class="faq-question">
+            <button class="faq-question" aria-expanded="false" aria-controls="answer3">
               <span class="faq-number">3</span>
               Solar Technology Explained
               <i class="fas fa-chevron-down"></i>
             </button>
-            <div class="faq-answer">
+            <div class="faq-answer" id="answer3" role="region">
               <div class="answer-content">
                 <p>Modern solar systems combine sophisticated engineering with elegant simplicity. Photovoltaic cells,
                   typically made from silicon, use the photovoltaic effect to convert sunlight into direct current (DC)
@@ -173,5 +178,4 @@
 
   <script src="learn.js"></script>
 </body>
-
 </html>
