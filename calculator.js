@@ -1,13 +1,16 @@
+const XLSX = require("xlsx");
+const path = require("path");
+
 // Function to calculate adjusted price based on years
 function getAdjustedPrice(basePrice, years) {
     let increaseRate = 0;
 
     if (years === 1) {
-        increaseRate = 0.04; // 4% increase for 1 year
+        increaseRate = 0.04;
     } else if (years === 3) {
-        increaseRate = 0.10; // 10% increase for 3 years
+        increaseRate = 0.10;
     } else if (years === 5) {
-        increaseRate = 0.15; // 15% increase for 5 years
+        increaseRate = 0.15;
     }
 
     const finalPrice = basePrice + (basePrice * increaseRate);
@@ -20,16 +23,30 @@ function getAdjustedPrice(basePrice, years) {
     };
 }
 
-// Async function to fetch battery price from Excel
+// Async function to fetch battery price from Excel (stub)
 async function getBatteryPriceFromExcel() {
     try {
-        // For demonstration, we'll use a mock value
-        // In production, replace with actual Excel file loading
         console.log("Simulating Excel fetch - using default battery price");
-        return 5000; // Default battery price in EGP
+        return 5000;
     } catch (error) {
         console.error("Error fetching battery price:", error);
-        return 5000; // Fallback value
+        return 5000;
+    }
+}
+
+// Async function to fetch Panel 1 price from Excel
+async function getPanelPriceFromExcel(panelName = "Panel 1") {
+    try {
+        const filePath = path.join(__dirname, "ExcelIgnited.xlsx");
+        const workbook = XLSX.readFile(filePath);
+        const sheet = workbook.Sheets["Sheet1"];
+        const data = XLSX.utils.sheet_to_json(sheet);
+
+        const panel = data.find(row => row["Unnamed: 0"] === panelName);
+        return panel?.Price ?? 6399.5;
+    } catch (error) {
+        console.error("Error fetching panel price from Excel:", error);
+        return 6399.5;
     }
 }
 
@@ -76,8 +93,8 @@ function calculateOffGridSystem(
 }
 
 // Handle form submission
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById("solar-calculator").addEventListener("submit", async function(event) {
+document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById("solar-calculator").addEventListener("submit", async function (event) {
         event.preventDefault();
 
         let energyInput = document.getElementById("energy-consumption").value;
@@ -89,24 +106,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
 
         let monthlyConsumption = parseFloat(energyInput);
-        let energyConsumption = monthlyConsumption / 30; // Convert to daily
+        let energyConsumption = monthlyConsumption / 30;
         let highestBill = parseFloat(billInput);
 
-        // System parameters
-        const panelWattage = 550; // Updated to more modern panel size
-        const panelPrice =  6,399.5; // EGP per panel
-        const psh = 5.5; // Peak sun hours
-        const sf = 1.25; // Safety factor
-        const invEfficiency = 0.92; // Inverter efficiency
-        const DOD = 0.5; // Depth of discharge
-        const chargeEfficiency = 0.95; // Charge controller efficiency
-        const autonomyDays = 2; // Days of autonomy
-        const batteryAH = 200; // Battery capacity in AH
+        // Parameters
+        const panelWattage = 550;
+        const panelPrice = await getPanelPriceFromExcel("Panel 1");
+        const psh = 5.5;
+        const sf = 1.25;
+        const invEfficiency = 0.92;
+        const DOD = 0.5;
+        const chargeEfficiency = 0.95;
+        const autonomyDays = 2;
+        const batteryAH = 200;
 
-        // Fetch battery price
         const batteryPrice = await getBatteryPriceFromExcel();
 
-        // Calculate system details
         const results = calculateOffGridSystem(
             energyConsumption,
             panelWattage,
@@ -121,9 +136,9 @@ document.addEventListener('DOMContentLoaded', function() {
             batteryPrice
         );
 
-        // Calculate payback period (years)
-        const annualSavings = highestBill * 12 * 0.7; // Assuming 30% savings
-        const paybackPeriod = (results.totalSystemPrice / annualSavings).toFixed(1);
+        const annualSavings = highestBill * 12 * 0.7;
+        let paybackPeriod = (results.totalSystemPrice / annualSavings).toFixed(1);
+        let adjustedPayback = Math.min(parseFloat(paybackPeriod), 10);
 
         // Generate installment plans
         const plans = [1, 3, 5];
@@ -148,13 +163,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 <p><strong>Solar Panels:</strong> ${results.numPanels} × ${panelWattage}W panels</p>
                 <p><strong>Battery Bank:</strong> ${results.totalBatteries} × ${batteryAH}Ah batteries (${results.batteryVoltage}V system)</p>
                 <p><strong>Total System Cost:</strong> EGP ${results.totalSystemPrice.toLocaleString('en-EG')}</p>
-                <p><strong>Estimated Payback Period:</strong> ${paybackPeriod} years</p>
+                <p><strong>Estimated Payback Period:</strong> ${adjustedPayback} years</p>
             </div>
             ${plansHTML}
             <p class="disclaimer">Note: Calculations are estimates. Actual system may vary based on site conditions.</p>
         `;
 
-        // Show results
         document.getElementById("result").style.display = 'block';
     });
 });
