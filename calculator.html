@@ -1,29 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Solar Calculator</title>
-  <link rel="stylesheet" href="calculator.css">
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap"
-    rel="stylesheet">
-  <link rel="stylesheet" href="learn.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+  <link rel="stylesheet" href="calculator.css"/>
+  <link rel="stylesheet" href="learn.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 </head>
-
 <body>
   <header>
-    <a href="index.html">
-      <div class="logo"><img src="Logo.png" width="150px" alt="Solar Solutions Logo">
-    </a></div>
+    <div class="logo">
+      <a href="index.html">
+        <img src="Logo.png" width="150px" alt="Solar Solutions Logo" />
+      </a>
+    </div>
     <nav>
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="learn.html">Learn</a></li>
         <li><a href="pricing.html">Plans & Pricing</a></li>
-        <li><a href="parteners.html">Products & Partnerships</a></li>
+        <li><a href="partners.html">Products & Partnerships</a></li>
       </ul>
     </nav>
     <div class="profile-icon"></div>
@@ -40,11 +38,11 @@
       <form id="solar-calculator">
         <div class="form-group">
           <label for="energy-consumption">Average Monthly Energy Consumption (kWh):</label>
-          <input type="number" id="energy-consumption" required>
+          <input type="number" id="energy-consumption" required />
         </div>
         <div class="form-group">
           <label for="highest-bill">Highest Monthly Bill (EGP):</label>
-          <input type="number" id="highest-bill" required>
+          <input type="number" id="highest-bill" required />
         </div>
         <button type="submit" class="calculate-btn">Calculate System</button>
       </form>
@@ -52,27 +50,23 @@
 
     <div id="result" class="results-card"></div>
   </main>
+
   <footer>
     <div class="footer-content">
       <div class="footer-info">
-        <img src="Logo.png" width="120px" alt="Solar Solutions Logo">
+        <img src="Logo.png" width="120px" alt="Solar Solutions Logo" />
         <p>Pioneering solar energy solutions</p>
       </div>
 
       <div class="social-container">
         <a href="https://www.facebook.com/profile.php?id=61573994254085" class="social-btn facebook">
-          <i class="fab fa-facebook-f"></i>
-          <span>Join Our Community</span>
+          <i class="fab fa-facebook-f"></i><span>Join Our Community</span>
         </a>
-
         <a href="https://www.instagram.com/u.s.s.r_corporation/" class="social-btn instagram">
-          <i class="fab fa-instagram"></i>
-          <span>@u.s.s.r_corporation</span>
+          <i class="fab fa-instagram"></i><span>@u.s.s.r_corporation</span>
         </a>
-
-        <a href="" class="social-btn whatsapp">
-          <i class="fab fa-whatsapp"></i>
-          <span>Chat With Experts</span>
+        <a href="https://wa.me/your_number_here" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i><span>Chat With Experts</span>
         </a>
       </div>
     </div>
@@ -80,7 +74,7 @@
       <p>&copy; 2025 USSR. All rights reserved.</p>
     </div>
   </footer>
+
   <script src="calculator.js"></script>
 </body>
-
 </html>
