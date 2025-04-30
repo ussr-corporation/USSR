@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // System parameters
         const panelWattage = 550; // Updated to more modern panel size
-        const panelPrice = 2500; // EGP per panel
+        const panelPrice =  6,399.5; // EGP per panel
         const psh = 5.5; // Peak sun hours
         const sf = 1.25; // Safety factor
         const invEfficiency = 0.92; // Inverter efficiency
