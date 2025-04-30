@@ -147,6 +147,7 @@ nav ul li a:hover::after {
 
 /* Form Styles */
 .form-group {
+  width:95%;
   margin-bottom: 1.5rem;
 }
 
