@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solar Energy Solutions | Clean Renewable Power</title>
+  <meta name="description" content="Professional solar energy solutions for homes and businesses. Reduce your energy bills with our custom solar installations.">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  /* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Ubuntu:wght@500;700&display=swap');
+
+:root {
+  --primary-color: #1a1a5e;
+  --secondary-color: #3498db;
+  --accent-color: #f5d442;
+  --light-color: #ecf0f1;
+  --dark-color: #0b0b3b;
+  --text-color: #000000;
+  --text-light: #7f8c8d;
+  --white: #fff;
+  --font-main: 'Open Sans', sans-serif;
+  --font-heading: 'Ubuntu', sans-serif;
+  --transition: all 0.3s ease;
+  --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-main);
+  color: var(--text-color);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  line-height: 1.3;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Header Styles (Unchanged) */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  background-color: var(--primary-color);
+  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo img {
+  height: auto;
+  max-width: 150px;
+  transition: transform 0.3s;
+}
+
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: 600;
+  font-family: var(--font-heading);
+  position: relative;
+  padding: 0.5rem 0;
+  transition: color 0.3s;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: all 0.3s ease;
+  transform: translateX(-50%);
+}
+
+nav ul li a:hover {
+  color: var(--accent-color);
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.profile-icon {
+  color: var(--white);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.profile-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Main Content Styles */
+#main_backgroundImage {
+  background-image: url("Untitled design.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  width: 100%;
+  position: relative;
+}
+
+/* Hero Section */
+.hero-section {
+  padding: 8rem 5% 4rem;
+  text-align: center;
+  color: var(--white);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.hero-subtitle {
+  font-size: 1.3rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+  opacity: 0.9;
+}
+
+.hero-cta {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.8rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.cta-button.primary {
+  background-color: var(--accent-color);
+  color: var(--primary-color);
+}
+
+.cta-button.primary:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--box-shadow);
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  border: 2px solid var(--white);
+  color: var(--white);
+}
+
+.cta-button.secondary:hover {
+  background-color: rgba(255,255,255,0.1);
+}
+
+/* Stats Bar */
+.stats-bar {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgba(255,255,255,0.1);
+  backdrop-filter: blur(5px);
+  padding: 2rem;
+  margin: 2rem auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.stat-item {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* Solutions Section */
+.solutions-section {
+  padding: 5rem 5%;
+  background-color: var(--white);
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.section-header h2 {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.section-header p {
+  color: var(--text-light);
+  font-size: 1.1rem;
+}
+
+.solutions-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.solution-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 400px;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  background-color: var(--white);
+}
+
+.solution-card.featured {
+  transform: scale(1.05);
+  position: relative;
+  z-index: 1;
+}
+
+.solution-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.solution-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 1.5rem;
+}
+
+.card-content h3 {
+  color: var(--primary-color);
+  margin-bottom: 0.5rem;
+}
+
+.card-content p {
+  color: var(--text-light);
+  margin-bottom: 1rem;
+}
+
+.learn-more {
+  color: var(--accent-color);
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.learn-more:hover {
+  gap: 1rem;
+}
+
+/* Benefits Section */
+.benefits-section {
+  padding: 5rem 5%;
+  background-color: var(--light-color);
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.benefit-card {
+  background-color: var(--white);
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+}
+
+.benefit-card:hover {
+  transform: translateY(-5px);
+}
+
+.benefit-icon {
+  width: 70px;
+  height: 70px;
+  background-color: rgba(245, 212, 66, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+  color: var(--accent-color);
+  font-size: 1.8rem;
+}
+
+.benefit-card h3 {
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 5rem 5%;
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-color) 100%);
+  color: var(--white);
+  text-align: center;
+}
+
+.cta-content {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.cta-content h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.cta-content p {
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+.quote-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quote-form input {
+  padding: 1rem;
+  border-radius: 50px;
+  border: none;
+  font-family: var(--font-main);
+}
+
+.quote-form input:focus {
+  outline: 2px solid var(--accent-color);
+}
+
+/* Footer Styles (Unchanged) */
+footer {
+  background-color: var(--primary-color);
+  color: var(--white);
+  padding: 4rem 0 1.5rem;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.footer-info img {
+  max-width: 120px;
+  height: auto;
+}
+
+.footer-info p {
+  margin-top: 0.8rem;
+  opacity: 0.8;
+  font-size: 0.95rem;
+  max-width: 300px;
+}
+
+.social-container {
+  display: flex;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.social-btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  color: white;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.social-btn i {
+  margin-right: 0.7rem;
+  font-size: 1.1rem;
+}
+
+.social-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.facebook {
+  background: #3b5998;
+}
+
+.instagram {
+  background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+}
+
+.whatsapp {
+  background: #25d366;
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 0.85rem;
+  opacity: 0.7;
+  width: 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem;
+  }
+  
+  .stats-bar {
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1.5rem;
+  }
+  
+  .solution-card.featured {
+    transform: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  .section-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  
+  .stat-number {
+    font-size: 2rem;
+  }
+  
+  .solution-card {
+    min-width: 100%;
+  }
+}
+</style>
+</head>
+
+<body>
+  <div id="main_backgroundImage">
+    <!-- Original Header (Unchanged) -->
+    <header>
+      <a href="index.html">
+        <div class="logo"><img src="Logo.png" width="150px" alt="Solar Solutions Logo">
+      </a>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="learn.html">Learn</a></li>
+          <li><a href="pricing.html">Plans & Pricing</a></li>
+          <li><a href="parteners.html">Products & Partnerships</a></li>
+        </ul>
+      </nav>
+      <div class="profile-icon"></div>
+    </header>
+
+    <!-- Improved Main Content -->
+    <main>
+
+      <!-- Solutions Gallery -->
+      <section class="solutions-section">
+        <div class="section-header">
+          <h2>Our Solar Solutions</h2>
+          <p>Custom installations for every need</p>
+        </div>
+        <div class="solutions-grid">
+          <div class="solution-card">
+            <img src="solarpanel1.jpg" alt="Residential Solar Installation">
+            <div class="card-content">
+              <h3>Residential</h3>
+              <p>Perfect for homeowners looking to reduce energy costs</p>
+              <a href="pricing.html" class="learn-more">Learn More →</a>
+            </div>
+          </div>
+          <div class="solution-card featured">
+            <img src="solarpanel2.jpg" alt="Commercial Solar Array">
+            <div class="card-content">
+              <h3>Commercial</h3>
+              <p>Energy solutions for businesses of all sizes</p>
+              <a href="pricing.html" class="learn-more">Learn More →</a>
+            </div>
+          </div>
+          <div class="solution-card">
+            <img src="solarpanel3.jpg" alt="Industrial Solar Farm">
+            <div class="card-content">
+              <h3>Industrial</h3>
+              <p>Large-scale solutions for maximum impact</p>
+              <p><b>coming soon</b></p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Benefits Section -->
+      <section class="benefits-section">
+        <div class="section-header">
+          <h2>Why Choose Solar?</h2>
+          <p>The advantages of clean energy</p>
+        </div>
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-dollar-sign"></i>
+            </div>
+            <h3>Lower Bills</h3>
+            <p>Reduce your electricity costs by up to 80% with solar power</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-leaf"></i>
+            </div>
+            <h3>Eco Friendly</h3>
+            <p>Clean, renewable energy that reduces your carbon footprint</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-home"></i>
+            </div>
+            <h3>Increase Value</h3>
+            <p>Solar panels can increase your property value by 4.1% on average</p>
+          </div>
+          <div class="benefit-card">
+            <div class="benefit-icon">
+              <i class="fas fa-battery-full"></i>
+            </div>
+            <h3>Energy Security</h3>
+            <p>Reduce dependence on the grid and protect against outages</p>
+          </div>
+        </div>
+      </section>
+  <!-- Original Footer (Unchanged) -->
+  <footer>
+    <div class="footer-content">
+      <div class="footer-info">
+        <img src="Logo.png" width="120px" alt="Solar Solutions Logo">
+        <p>Pioneering solar energy solutions</p>
+      </div>
+
+      <div class="social-container">
+        <a href="https://www.facebook.com/profile.php?id=61573994254085" class="social-btn facebook">
+          <i class="fab fa-facebook-f"></i>
+          <span>Join Our Community</span>
+        </a>
+
+        <a href="https://www.instagram.com/u.s.s.r_corporation/" class="social-btn instagram">
+          <i class="fab fa-instagram"></i>
+          <span>@u.s.s.r_corporation</span>
+        </a>
+
+        <a href="" class="social-btn whatsapp">
+          <i class="fab fa-whatsapp"></i>
+          <span>Chat With Experts</span>
+        </a>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2025 USSR. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>
