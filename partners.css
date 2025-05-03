@@ -107,6 +107,7 @@ body {
     gap: 30px;
     flex-wrap: wrap;
     padding: 40px;
+    height: 980px;
   }
 
   .partner-card {
