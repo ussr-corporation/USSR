@@ -155,7 +155,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <p><strong>Solar Panels:</strong> ${result.numPanels} × ${result.panelWattage}W panels</p>
             <p><strong>Battery Bank:</strong> ${result.totalBatteries} × ${batteryAH}Ah batteries (${result.batteryVoltage}V system)</p>
             <p><strong>Total System Cost:</strong> EGP ${result.totalSystemPrice.toLocaleString('en-EG')}</p>
-            <p><strong>Estimated Payback Period:</strong> ${result.paybackPeriod} years</p>
+            <p><strong>Estimated Payback Period:</strong> ${result.paybackPeriod} -  ${result.paybackPeriod}-1 years</p>
           </div>
         </div>
       `;
