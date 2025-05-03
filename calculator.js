@@ -64,9 +64,9 @@ function calculateOffGridSystem(
 
 // Panel options
 const panelOptions = [
-  { id: 1, name: 'Panel 1', wattage: 60, price: 6399.5 },
-  { id: 2, name: 'Panel 2', wattage: 100, price: 6978.5 },
-  { id: 3, name: 'Panel 3', wattage: 340, price: 11687.5 }
+  { id: 1, name: 'Panel 1', wattage: 300, price: 6399.5 },
+  { id: 2, name: 'Panel 2', wattage: 400, price: 6978.5 },
+  { id: 3, name: 'Panel 3', wattage: 500, price: 11687.5 }
 ];
 
 // Handle form submission
